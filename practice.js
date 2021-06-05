@@ -196,7 +196,7 @@
 // const madeSupper = cookingDinner(person);
 // console.log(madeSupper);
 
-// const mowingLawn = person => `${person.firstName} ${person.lastName} mowed the lawn in the backyard.`;
+const mowingLawn = person => `${person.firstName} ${person.lastName} mowed the lawn in the backyard`;
 
 // const mowing = mowingLawn(person);
 // console.log(mowing);
@@ -206,7 +206,23 @@
 // const watering = wateringPlants(person);
 // console.log(watering);
 
-                                                      // *Lazy Day example*:
+                                                // *Lazy Day example*:
+
+
+// const person = {
+//     firstName: "Yolanda",
+//     lastName: "Johnson"
+// };
+
+// const dayPlanner = (chore, day) => `${chore} on ${day}.`;
+
+// const plannedDay = dayPlanner(mowingLawn(person), "Thursday");
+// console.log(plannedDay);
+
+                                                // *Busy Day example*:
+
+
+                                                
 
 
 
