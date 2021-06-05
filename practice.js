@@ -131,7 +131,7 @@
 
 //----------------------------Same Chores, Different Days Exercises(Higher Order Functions):-------------------------------------------
 
-//*Number function example*:
+                                            //*Number function example*:
 
 //Individual functions:
 // const twice = number => number * 2;
@@ -169,7 +169,46 @@
 // const cubedValue = bigify(number, cube);
 // console.log(cubedValue);
 
-// *Defining the Chores example*:
+                                                // *Defining the Chores example*:
+
+// const person = {
+//     firstName: "Donald",
+//     lastName: "McLelland"
+// };
+
+// const groceryShopping = person => `${person.firstName} ${person.lastName} went to the grocery store to shop.`;
+
+// const shopping = groceryShopping(person);
+// console.log(shopping);
+
+// const vacuumingCarpet = person => `${person.firstName} ${person.lastName} vacuumed the carpeted floor.`;
+
+// const vacuuming = vacuumingCarpet(person);
+// console.log(vacuuming);
+
+// const washingDishes = person => `${person.firstName} ${person.lastName} washed the dishes after dinner.`;
+
+// const washDishes = washingDishes(person);
+// console.log(washDishes);
+
+// const cookingDinner = person => `${person.firstName} ${person.lastName} prepared supper.`;
+
+// const madeSupper = cookingDinner(person);
+// console.log(madeSupper);
+
+// const mowingLawn = person => `${person.firstName} ${person.lastName} mowed the lawn in the backyard.`;
+
+// const mowing = mowingLawn(person);
+// console.log(mowing);
+
+// const wateringPlants = person => `${person.firstName} ${person.lastName} watered the plants in the balcony.`;
+
+// const watering = wateringPlants(person);
+// console.log(watering);
+
+                                                      // *Lazy Day example*:
+
+
 
 
 
