@@ -196,7 +196,7 @@
 // const madeSupper = cookingDinner(person);
 // console.log(madeSupper);
 
-const mowingLawn = person => `${person.firstName} ${person.lastName} mowed the lawn in the backyard`;
+// const mowingLawn = person => `${person.firstName} ${person.lastName} mowed the lawn in the backyard`;
 
 // const mowing = mowingLawn(person);
 // console.log(mowing);
@@ -214,15 +214,29 @@ const mowingLawn = person => `${person.firstName} ${person.lastName} mowed the l
 //     lastName: "Johnson"
 // };
 
+// const mowingLawn = person => `${person.firstName} ${person.lastName} mowed the lawn in the backyard`;
+
 // const dayPlanner = (chore, day) => `${chore} on ${day}.`;
 
-// const plannedDay = dayPlanner(mowingLawn(person), "Thursday");
-// console.log(plannedDay);
+// const plannedLazyDay = dayPlanner(mowingLawn(person), "Thursday");
+// console.log(plannedLazyDay);
 
-                                                // *Busy Day example*:
+                                    // *Busy Day example(Refactoring dayPlanner function to accept more parameters)*:
 
+const person = {
+    firstName: "Yolanda",
+    lastName: "Johnson"
+};
 
-                                                
+const mowingLawn = person => `${person.firstName} ${person.lastName} mowed the lawn in the backyard`;
+const groceryShopping = person => `${person.firstName} ${person.lastName} went to the grocery store to shop`;
+const cookingDinner = person => `${person.firstName} ${person.lastName} prepared supper`;
+
+const dayPlanner = (firstChore, secondChore, thirdChore, day) => `On ${day}, ${firstChore}, and ${secondChore}, and ${thirdChore}.`;
+
+const plannedBusyDay = dayPlanner(mowingLawn(person), groceryShopping(person), cookingDinner(person), "Monday");
+console.log(plannedBusyDay);
+
 
 
 
