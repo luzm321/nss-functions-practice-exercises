@@ -237,27 +237,53 @@
 // const plannedBusyDay = dayPlanner(mowingLawn(person), groceryShopping(person), cookingDinner(person), "Monday");
 // console.log(plannedBusyDay);
 
-// ----------------------------------------------------------------------------------------------------
+// ------------------Passenger Counter Exercise----------------------------------------------------------------------------------
 
 /*Passenger Counter App: */
-let countEl = document.getElementById("count-el");
-let saveEl = document.getElementById("save-el")
-let count = 0;
+// let countEl = document.getElementById("count-el");
+// let saveEl = document.getElementById("save-el")
+// let count = 0;
 
-const increment = () => {
-    count += 1;
-    countEl.textContent = count;
+// const increment = () => {
+//     count += 1;
+//     countEl.textContent = count;
+// };
+
+// const save = () => {
+//     let countStr = count + " - "
+//     saveEl.textContent += countStr
+//     countEl.textContent = 0;
+//     count = 0;
+//     //console.log(count)
+// };
+
+// -------------------------Calculator Exercise:--------------------------------------
+
+let num1 = 8;
+let num2 = 2;
+document.getElementById("num1-el").textContent = num1;
+document.getElementById("num2-el").textContent = num2;
+let sumEl = document.getElementById("sum-el");
+
+const add = () => {
+    result = num1 + num2;
+    sumEl.textContent = "Sum: " + result;
 };
 
-const save = () => {
-    let countStr = count + " - "
-    saveEl.textContent += countStr
-    countEl.textContent = 0;
-    count = 0;
-    //console.log(count)
+const subtract = () => {
+    result = num1 - num2;
+    sumEl.textContent = "Sum: " + result;
 };
 
+const divide = () => {
+    result = num1 / num2;
+    sumEl.textContent = "Sum: " + result;
+};
 
+const multiply = () => {
+    result = num1 * num2;
+    sumEl.textContent = "Sum: " + result;
+};
 
 
 
