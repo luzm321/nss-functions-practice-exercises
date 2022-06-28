@@ -248,6 +248,10 @@ const increment = () => {
     innerEl.innerText = count;
 };
 
+const save = () => {
+    console.log(count)
+};
+
 
 
 
