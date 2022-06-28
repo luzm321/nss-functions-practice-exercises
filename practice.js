@@ -223,20 +223,30 @@
 
                                     // *Busy Day example(Refactoring dayPlanner function to accept more parameters)*:
 
-const person = {
-    firstName: "Yolanda",
-    lastName: "Johnson"
+// const person = {
+//     firstName: "Yolanda",
+//     lastName: "Johnson"
+// };
+
+// const mowingLawn = person => `${person.firstName} ${person.lastName} mowed the lawn in the backyard`;
+// const groceryShopping = person => `${person.firstName} ${person.lastName} went to the grocery store to shop`;
+// const cookingDinner = person => `${person.firstName} ${person.lastName} prepared supper`;
+
+// const dayPlanner = (firstChore, secondChore, thirdChore, day) => `On ${day}, ${firstChore}, and ${secondChore}, and ${thirdChore}.`;
+
+// const plannedBusyDay = dayPlanner(mowingLawn(person), groceryShopping(person), cookingDinner(person), "Monday");
+// console.log(plannedBusyDay);
+
+// ----------------------------------------------------------------------------------------------------
+
+/*Passenger Counter App: */
+let innerEl = document.getElementById("count-el");
+let count = 0;
+
+const increment = () => {
+    count = count + 1;
+    innerEl.innerText = count;
 };
-
-const mowingLawn = person => `${person.firstName} ${person.lastName} mowed the lawn in the backyard`;
-const groceryShopping = person => `${person.firstName} ${person.lastName} went to the grocery store to shop`;
-const cookingDinner = person => `${person.firstName} ${person.lastName} prepared supper`;
-
-const dayPlanner = (firstChore, secondChore, thirdChore, day) => `On ${day}, ${firstChore}, and ${secondChore}, and ${thirdChore}.`;
-
-const plannedBusyDay = dayPlanner(mowingLawn(person), groceryShopping(person), cookingDinner(person), "Monday");
-console.log(plannedBusyDay);
-
 
 
 
