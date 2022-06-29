@@ -353,3 +353,14 @@ const newCard = () => {
         renderGame();      
     };
 };
+
+// Rock Paper Scissors Exercise:
+let hands = ["rock", "paper", "scissors"];
+
+// function returns a random item from the array:
+const getHand = () => {
+    let randomIndex = Math.floor( Math.random() * 3)
+    return hands[randomIndex]
+};
+
+console.log( getHand() );
