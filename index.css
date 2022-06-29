@@ -95,12 +95,12 @@ button {
 
 /* Emoji Battle Exercise: */
 
-body {
+/* body {
     margin: 0;
     padding: 0;
     text-align: center;
     font-family: 'Permanent Marker', cursive;
-    /* background: linear-gradient(white, gray); */
+    background: linear-gradient(white, gray);
     height: 100vh;
     color: #e98a1d;
 
@@ -130,4 +130,25 @@ button {
     color: white;
     font-family: inherit;
     font-size: 20px
+} */
+
+/* Sorting Fruits Exercise: */
+
+body {
+    padding: 40px;
+    background: whitesmoke;
+    text-align: center;
+}
+
+#apple-shelf {
+    background: lightcoral;
+    border-radius: 10px;
+    height: 30px;
+    margin: 10px 0;
+}
+
+#orange-shelf {
+    background: lightsalmon;
+    border-radius: 10px;
+    height: 30px;
 }
