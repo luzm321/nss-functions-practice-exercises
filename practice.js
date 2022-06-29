@@ -288,79 +288,95 @@
 // Blackjack Game Exercise:
 
 
-let player = {
-    name: "Luz",
-    chips: 500
-};
+// let player = {
+//     name: "Luz",
+//     chips: 500
+// };
 
-let cards = [];
-let sum = 0;
-let hasBlackJack = false;
-let isAlive = false;
-let message = "";
-let messageEl = document.getElementById("message-el");
-let sumEl = document.getElementById("sum-el");
-let cardsEl = document.getElementById("cards-el");
-let playerEl = document.getElementById("player-el");
+// let cards = [];
+// let sum = 0;
+// let hasBlackJack = false;
+// let isAlive = false;
+// let message = "";
+// let messageEl = document.getElementById("message-el");
+// let sumEl = document.getElementById("sum-el");
+// let cardsEl = document.getElementById("cards-el");
+// let playerEl = document.getElementById("player-el");
 
-playerEl.textContent = `${player.name}: $${player.chips}`;
+// playerEl.textContent = `${player.name}: $${player.chips}`;
 
-const getRandomCard = () => {
-    let randomNumber = Math.floor( Math.random() *13 ) + 1;
-    if (randomNumber > 10) {
-        return 10;
-    } else if (randomNumber === 1) {
-        return 11;
-    } else {
-        return randomNumber;
-    };
-};
+// const getRandomCard = () => {
+//     let randomNumber = Math.floor( Math.random() *13 ) + 1;
+//     if (randomNumber > 10) {
+//         return 10;
+//     } else if (randomNumber === 1) {
+//         return 11;
+//     } else {
+//         return randomNumber;
+//     };
+// };
 
-const startGame = () => {
-    isAlive = true;
-    let firstCard = getRandomCard();
-    let secondCard = getRandomCard();
-    cards = [firstCard, secondCard];
-    sum = firstCard + secondCard;
-    renderGame();
-};
+// const startGame = () => {
+//     isAlive = true;
+//     let firstCard = getRandomCard();
+//     let secondCard = getRandomCard();
+//     cards = [firstCard, secondCard];
+//     sum = firstCard + secondCard;
+//     renderGame();
+// };
 
-const renderGame = () => {
-    cardsEl.textContent = "Cards: "
-    for (let i = 0; i < cards.length; i++) {
-        cardsEl.textContent += cards[i] + " "
-    };
+// const renderGame = () => {
+//     cardsEl.textContent = "Cards: "
+//     for (let i = 0; i < cards.length; i++) {
+//         cardsEl.textContent += cards[i] + " "
+//     };
     
-    sumEl.textContent = "Sum: " + sum
-    if (sum <= 20) {
-        message = "Do you want to draw a new card?"
-    } else if (sum === 21) {
-        message = "You've got Blackjack!"
-        hasBlackJack = true
-    } else {
-        message = "You're out of the game!"
-        isAlive = false
-    };
-    messageEl.textContent = message;
-};
+//     sumEl.textContent = "Sum: " + sum
+//     if (sum <= 20) {
+//         message = "Do you want to draw a new card?"
+//     } else if (sum === 21) {
+//         message = "You've got Blackjack!"
+//         hasBlackJack = true
+//     } else {
+//         message = "You're out of the game!"
+//         isAlive = false
+//     };
+//     messageEl.textContent = message;
+// };
 
 
-const newCard = () => {
-    if (isAlive === true && hasBlackJack === false) {
-        let card = getRandomCard();
-        sum += card;
-        cards.push(card);
-        renderGame();      
-    };
-};
+// const newCard = () => {
+//     if (isAlive === true && hasBlackJack === false) {
+//         let card = getRandomCard();
+//         sum += card;
+//         cards.push(card);
+//         renderGame();      
+//     };
+// };
 
 // Rock Paper Scissors Exercise:
-let hands = ["rock", "paper", "scissors"];
+// let hands = ["rock", "paper", "scissors"];
 
 // function returns a random item from the array:
-const getHand = () => {
-    let randomIndex = Math.floor( Math.random() * 3)
-    return hands[randomIndex]
-};
+// const getHand = () => {
+//     let randomIndex = Math.floor( Math.random() * 3)
+//     return hands[randomIndex]
+// };
 
-console.log( getHand() );
+// console.log( getHand() );
+
+
+//Emoji Battle Practice:
+
+const fighters = ["🐉", "🐥", "🐊","💩", "🦍", "🐢", "🐩", "🦭", "🦀", "🐝", "🤖", "🐘", "🐸", "🕷","🐆", "🦕", "🦁"];
+
+const stageEl = document.getElementById("stage");
+const fightButton = document.getElementById("fightButton");
+
+fightButton.addEventListener("click", () => {
+    // When the user clicks on the "Choose Fighters" button, two random 
+    // emoji fighters are chosen and displayed: i.e. "🦀 vs 🐢" in the "stage" <div>.
+    const firstRandomFighter = Math.floor( Math.random() * fighters.length);
+    const secondRandomFighter = Math.floor( Math.random() * fighters.length);
+    stageEl.textContent = `${fighters[firstRandomFighter]} vs ${fighters[secondRandomFighter]}`; 
+});
