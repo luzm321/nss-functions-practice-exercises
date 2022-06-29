@@ -383,21 +383,76 @@
 
 //Sorting Fruits Exercise:
 
-let fruits = ["🍎", "🍊", "🍎", "🍎", "🍊"]
-let appleShelf = document.getElementById("apple-shelf")
-let orangeShelf = document.getElementById("orange-shelf")
+// let fruits = ["🍎", "🍊", "🍎", "🍎", "🍊"]
+// let appleShelf = document.getElementById("apple-shelf")
+// let orangeShelf = document.getElementById("orange-shelf")
 
 // Function puts the apples onto the appleShelf
 // and the oranges onto the orangeShelf.
 
-const sortFruits = () => {
-    for (let i = 0; i < fruits.length; i++) {
-        if (fruits[i] === "🍎") {
-            appleShelf.textContent += fruits[i]
-        } else if (fruits[i] === "🍊") {
-            orangeShelf.textContent += fruits[i]
-        }
-    };
+// const sortFruits = () => {
+//     for (let i = 0; i < fruits.length; i++) {
+//         if (fruits[i] === "🍎") {
+//             appleShelf.textContent += fruits[i]
+//         } else if (fruits[i] === "🍊") {
+//             orangeShelf.textContent += fruits[i]
+//         }
+//     };
+// };
+
+// sortFruits();
+
+//----------------------------------URL Tracker Chrome Extension---------------------------------------------
+
+//URL Tracker Chrome Extension:
+
+let myLeads = [];
+const inputEl = document.getElementById("input-el");
+const inputBtn = document.getElementById("input-btn");
+const ulEl = document.getElementById("ul-el");
+const deleteBtn = document.getElementById("delete-btn");
+const leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads") );
+const tabBtn = document.getElementById("tab-btn");
+
+if (leadsFromLocalStorage) {
+    myLeads = leadsFromLocalStorage;
+    render(myLeads);
 };
 
-sortFruits();
+tabBtn.addEventListener("click", () => {    
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
+        myLeads.push(tabs[0].url);
+        localStorage.setItem("myLeads", JSON.stringify(myLeads) );
+        render(myLeads);
+    });
+});
+
+// Display leads array as lists to the DOM
+const render = (leads) => {
+    let listItems = ""
+    for (let i = 0; i < leads.length; i++) {
+        listItems += `
+            <li>
+                <a target='_blank' href='${leads[i]}'>
+                    ${leads[i]}
+                </a>
+            </li>
+        `;
+    };
+    ulEl.innerHTML = listItems;
+};
+
+// clear localStorage
+deleteBtn.addEventListener("dblclick", () => {
+    localStorage.clear();
+    myLeads = [];
+    render(myLeads);
+});
+
+// set myLeads array as string to localStorage
+inputBtn.addEventListener("click", () => {
+    myLeads.push(inputEl.value)
+    inputEl.value = "";
+    localStorage.setItem("myLeads", JSON.stringify(myLeads) );
+    render(myLeads);
+});
