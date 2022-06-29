@@ -456,3 +456,22 @@ inputBtn.addEventListener("click", () => {
     localStorage.setItem("myLeads", JSON.stringify(myLeads) );
     render(myLeads);
 });
+
+// String Generator Function:
+// The function takes two parameters: a description and an array.
+// It returns a string based upon the description and array.
+const generateSentence = (desc, arr) => {
+    let baseString = `The ${arr.length} ${desc} are `
+    const lastIndex = arr.length - 1
+    for (let i = 0; i < arr.length; i++) {
+        if (i === lastIndex) {
+            baseString += arr[i]
+        } else {
+            baseString += arr[i] + ", "   
+        }
+    }
+    return baseString;
+};
+
+const sentence = generateSentence("best fruits", ["mango", "strawberry", "apple"]);
+console.log(sentence);
