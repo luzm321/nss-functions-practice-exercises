@@ -368,15 +368,36 @@
 
 //Emoji Battle Practice:
 
-const fighters = ["🐉", "🐥", "🐊","💩", "🦍", "🐢", "🐩", "🦭", "🦀", "🐝", "🤖", "🐘", "🐸", "🕷","🐆", "🦕", "🦁"];
+// const fighters = ["🐉", "🐥", "🐊","💩", "🦍", "🐢", "🐩", "🦭", "🦀", "🐝", "🤖", "🐘", "🐸", "🕷","🐆", "🦕", "🦁"];
 
-const stageEl = document.getElementById("stage");
-const fightButton = document.getElementById("fightButton");
+// const stageEl = document.getElementById("stage");
+// const fightButton = document.getElementById("fightButton");
 
-fightButton.addEventListener("click", () => {
-    // When the user clicks on the "Choose Fighters" button, two random 
-    // emoji fighters are chosen and displayed: i.e. "🦀 vs 🐢" in the "stage" <div>.
-    const firstRandomFighter = Math.floor( Math.random() * fighters.length);
-    const secondRandomFighter = Math.floor( Math.random() * fighters.length);
-    stageEl.textContent = `${fighters[firstRandomFighter]} vs ${fighters[secondRandomFighter]}`; 
-});
+// fightButton.addEventListener("click", () => {
+//     // When the user clicks on the "Choose Fighters" button, two random 
+//     // emoji fighters are chosen and displayed: i.e. "🦀 vs 🐢" in the "stage" <div>.
+//     const firstRandomFighter = Math.floor( Math.random() * fighters.length);
+//     const secondRandomFighter = Math.floor( Math.random() * fighters.length);
+//     stageEl.textContent = `${fighters[firstRandomFighter]} vs ${fighters[secondRandomFighter]}`; 
+// });
+
+//Sorting Fruits Exercise:
+
+let fruits = ["🍎", "🍊", "🍎", "🍎", "🍊"]
+let appleShelf = document.getElementById("apple-shelf")
+let orangeShelf = document.getElementById("orange-shelf")
+
+// Function puts the apples onto the appleShelf
+// and the oranges onto the orangeShelf.
+
+const sortFruits = () => {
+    for (let i = 0; i < fruits.length; i++) {
+        if (fruits[i] === "🍎") {
+            appleShelf.textContent += fruits[i]
+        } else if (fruits[i] === "🍊") {
+            orangeShelf.textContent += fruits[i]
+        }
+    };
+};
+
+sortFruits();
